@@ -24,7 +24,7 @@ app.get("/quran/:chapter/:verse", (req, res) => {
 
         for (let line of lines) {
             let parts = line.match(/([^,]+),([^,]+),([^,]+),([^,]+),(.+)/);
-            if (parts.length < 5) continue;
+            if (!parts || parts.length < 6) continue;
 
             let chapterIndex = parseInt(parts[2].trim());
             let chapterName = parts[3].trim();
