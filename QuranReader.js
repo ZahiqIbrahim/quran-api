@@ -1,4 +1,4 @@
-const fs = require('fs');
+/*const fs = require('fs');
 const readline = require('readline');
 
 const filePath = "\quran.csv";
@@ -59,4 +59,4 @@ rl.question("Chapter No : ", (inputChapter) => {
             }
         });
     });
-});
+}); */
