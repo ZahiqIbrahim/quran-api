@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 const fs = require('fs');
+=======
+<<<<<<< HEAD
+/*const fs = require('fs');
+>>>>>>> 27f4fc2 (TEST)
 const readline = require('readline');
 
+=======
+//const fs = require('fs');
+//const readline = require('readline');
+/*
+>>>>>>> a6fa236 (TEST)
 const filePath = "\quran.csv";
 
 const rl = readline.createInterface({
@@ -59,4 +69,12 @@ rl.question("Chapter No : ", (inputChapter) => {
             }
         });
     });
+<<<<<<< HEAD
 }); 
+=======
+<<<<<<< HEAD
+}); */
+=======
+});  */
+>>>>>>> a6fa236 (TEST)
+>>>>>>> 27f4fc2 (TEST)
