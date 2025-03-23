@@ -4,9 +4,9 @@ const cors = require("cors");
 
 const app = express();
 const port = 3000;
-const filePath = "quran.csv"; // Ensure this file is in the same directory
+const filePath = "quran.csv"; 
 
-app.use(cors()); // Enable CORS for all routes
+app.use(cors()); 
 app.use(express.json());
 
 // API Endpoint: Get a verse by chapter and verse number
