@@ -23,13 +23,13 @@ app.get("/quran/:chapter/:verse", (req, res) => {
         let foundVerse = null;
 
         for (let line of lines) {
-            let parts = line.split(",", 5);
+            let parts = line.match(/([^,]+),([^,]+),([^,]+),([^,]+),(.+)/);
             if (parts.length < 5) continue;
 
-            let chapterIndex = parseInt(parts[1].trim());
-            let chapterName = parts[2].trim();
-            let verseIndex = parseInt(parts[3].trim());
-            let text = parts[4].trim();
+            let chapterIndex = parseInt(parts[2].trim());
+            let chapterName = parts[3].trim();
+            let verseIndex = parseInt(parts[4].trim());
+            let text = parts[5].trim();  
 
             if (inputVerse === 0) {
                 if (chapterIndex === inputChapter) {
