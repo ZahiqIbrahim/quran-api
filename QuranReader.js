@@ -25,7 +25,7 @@ rl.question("Chapter No : ", (inputChapter) => {
             let found = false;
 
             for (let line of lines) {
-                // Use regex to match the correct CSV format
+               
                 let parts = line.match(/([^,]+),([^,]+),([^,]+),([^,]+),(.+)/);
                 
                 if (!parts || parts.length < 6) continue;
@@ -33,7 +33,7 @@ rl.question("Chapter No : ", (inputChapter) => {
                 let chapterIndex = parseInt(parts[2].trim());
                 let chapterName = parts[3].trim();
                 let verseIndex = parseInt(parts[4].trim());
-                let text = parts[5].trim(); // Verse text (keeps commas intact)
+                let text = parts[5].trim(); 
 
                 if (inputVerse === 0) {
                     if (chapterIndex === inputChapter && verseIndex === 1) {

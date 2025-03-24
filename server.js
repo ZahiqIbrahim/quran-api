@@ -7,10 +7,10 @@ const app = express();
 const port = process.env.PORT || 3000;
 const filePath = path.join(__dirname, "quran.csv");
 
-// Enable CORS
+
 app.use(cors());
 
-// Ensure the Quran CSV file exists before starting the server
+
 if (!fs.existsSync(filePath)) {
     console.error("Error: quran.csv file not found.");
     process.exit(1); // Stop server if file is missing
@@ -32,7 +32,7 @@ app.get("/quran/:chapter/:verse", (req, res) => {
 
         for (let line of lines) {
             let parts = line.match(/([^,]+),([^,]+),([^,]+),([^,]+),(.+)/);
-            if (!parts) continue; // No need for `parts.length < 6` check
+            if (!parts) continue; 
 
             let chapterIndex = parseInt(parts[2].trim());
             let chapterName = parts[3].trim();
@@ -56,7 +56,7 @@ app.get("/quran/:chapter/:verse", (req, res) => {
 
         if (foundVerse) {
             if (Array.isArray(foundVerse.text)) {
-                foundVerse.text = foundVerse.text.join("\n"); // Join array for multi-verse output
+                foundVerse.text = foundVerse.text.join("\n"); 
             }
             res.json(foundVerse);
         } else {
