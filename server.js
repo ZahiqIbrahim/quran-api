@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const filePath = path.join(__dirname, "quran.csv");
 
-const cors = require('cors');
+app.use(cors());
 
 
 if (!fs.existsSync(filePath)) {
