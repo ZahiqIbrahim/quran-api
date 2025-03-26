@@ -25,15 +25,15 @@ rl.question("Chapter No : ", (inputChapter) => {
             let found = false;
 
             for (let line of lines) {
-               
+
                 let parts = line.match(/([^,]+),([^,]+),([^,]+),([^,]+),(.+)/);
-                
+
                 if (!parts || parts.length < 6) continue;
 
                 let chapterIndex = parseInt(parts[2].trim());
                 let chapterName = parts[3].trim();
                 let verseIndex = parseInt(parts[4].trim());
-                let text = parts[5].trim(); 
+                let text = parts[5].trim();
 
                 if (inputVerse === 0) {
                     if (chapterIndex === inputChapter && verseIndex === 1) {

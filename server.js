@@ -13,7 +13,7 @@ app.use(cors());
 
 if (!fs.existsSync(filePath)) {
     console.error("Error: quran.csv file not found.");
-    process.exit(1); // Stop server if file is missing
+    process.exit(1);
 }
 
 // API Endpoint: Get a verse by chapter and verse number
@@ -32,7 +32,7 @@ app.get("/quran/:chapter/:verse", (req, res) => {
 
         for (let line of lines) {
             let parts = line.match(/([^,]+),([^,]+),([^,]+),([^,]+),(.+)/);
-            if (!parts) continue; 
+            if (!parts) continue;
 
             let chapterIndex = parseInt(parts[2].trim());
             let chapterName = parts[3].trim();
@@ -56,7 +56,7 @@ app.get("/quran/:chapter/:verse", (req, res) => {
 
         if (foundVerse) {
             if (Array.isArray(foundVerse.text)) {
-                foundVerse.text = foundVerse.text.join("\n"); 
+                foundVerse.text = foundVerse.text.join("\n");
             }
             res.json(foundVerse);
         } else {
